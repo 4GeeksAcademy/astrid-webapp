@@ -52,7 +52,7 @@ export default function storeReducer(store, action = {}) {
             : todo
         ))
       };
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // 11. Segundo 'case': Se ejecuta si el tipo de la acción es 'set_personajes'.
     case "set_personajes":
       // 12. Desestructuración del 'payload' de la acción. Se extrae la propiedad 'personaje'.
