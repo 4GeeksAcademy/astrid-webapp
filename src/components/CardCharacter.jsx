@@ -34,9 +34,9 @@ const CharacterCard = ({ people }) => {
         
         <div className="d-flex justify-content-between ">
           <button className="btn btn-primary"
-            // onClick={() => {
-            //   navigate(`/description/${ch.uid}`)
-            // }}
+            onClick={() => {
+              navigate(`/description/${people.uid}`)
+            }}
             >+</button>
           <button type="button" className="btn btn-outline-danger"
             // onClick={handleFavorite}
