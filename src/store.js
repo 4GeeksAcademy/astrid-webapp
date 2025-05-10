@@ -13,7 +13,8 @@ export const initialStore = () => {
         background: null,
       }
     ],
-    characters: []
+    characters: [],
+    favorites:  []
   }
 }
 // 1. Definición y exportación de la función reducer llamada 'storeReducer'.
@@ -66,7 +67,30 @@ export default function storeReducer(store, action = {}) {
         // 15. Se actualiza la propiedad 'characters' del estado con el valor de 'personaje'
         //     proporcionado en el 'payload'.
         characters: personaje
-      }
+      };
+
+
+      ///////////////////////////////////////////////////////////////////////////////
+      case "newFavorite":
+        const addFavorite = action.payload
+        return {
+          
+          ...store,
+          favorites: [...store.favorites, addFavorite]
+        }
+        ////////////////////////////////////////////////////////////////////////////////
+        case "removeFavorite":
+          const favoriteName= action.payload
+          return{
+            ...store,
+            favorites: store.favorites.filter((name) => name !== favoriteName)
+          }
+
+
+
+
+
+
 
     // 16. 'default' case: Se ejecuta si el tipo de la acción no coincide con ningún 'case' anterior.
     default:

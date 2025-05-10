@@ -7,23 +7,25 @@ const CharacterCard = ({ people }) => {
   const { store, dispatch } = useGlobalReducer();
 
   const navigate = useNavigate();
-//   const isFavorite = store.favorites.includes(ch.name)
-//   const handleFavorite = () => {
-//     if (isFavorite === true) {
-//       const action = {
-//         type: "removeFavorite",
-//         payload: ch.name
-//       }
-//       dispatch(action)
-//         }
-//         else{
-//           const action = {
-//             type: "newFavorite",
-//             payload: ch.name
-//       }
-//       dispatch(action)
-//     }
-//   }
+
+  ///////////////////////////////////
+  const isFavorite = store.favorites.includes(people.name)
+  const handleFavorite = () => {
+    if (isFavorite === true) {
+      const action = {
+        type: "removeFavorite",
+        payload: people.name
+      }
+      dispatch(action)
+        }
+        else{
+          const action = {
+            type: "newFavorite",
+            payload: people.name
+      }
+      dispatch(action)
+    }
+  }
   return (
     <div className="col">
     <div className="card" style={{ width: "18rem"}}>
@@ -39,7 +41,7 @@ const CharacterCard = ({ people }) => {
             }}
             >+</button>
           <button type="button" className="btn btn-outline-danger"
-            // onClick={handleFavorite}
+            onClick={handleFavorite}
             >
             <i 
             className=
