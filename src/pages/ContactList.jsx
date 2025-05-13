@@ -41,7 +41,13 @@ const ContactList = () => {
   };
   return (
     <div className="container mt-4">
-      <div className="d-flex flex-row overflow-scroll ">
+      <div className="d-flex justify-content-between mb-3">
+        <h2>Contacts</h2>
+        <Link to="/add-contact">
+          <button className="btn btn-success">Add new contact</button>
+        </Link>
+      </div>
+      <div className=" ">
 				{store. contacts.map((value, index) => {
 					return (
 						<ContactCard key={index} contact={value} />
