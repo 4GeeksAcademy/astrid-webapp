@@ -1,6 +1,6 @@
 
 
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer"; //importar 
 import  React, { useEffect, useState } from "react";
 
@@ -8,7 +8,7 @@ import  React, { useEffect, useState } from "react";
 export const Navbar = () => {
 
 	const { store, dispatch } = useGlobalReducer(); //declarar
-	// const navigate = useNavigate();
+	const navigate = useNavigate();
 	const [likes, setLikes] = useState();
 	///borrar
 	
@@ -27,11 +27,11 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar">
 			<div className="container">
-				{/* <img className="logo btn"
+				<img className="logo btn"
 					onClick={() => {
-						navigate("/")
+						navigate("/contact")
 					}}
-					src="" alt="img" /> */}
+					src="" alt="img" />
 				<div className="ml-auto">
 					<div className="dropdown">
 						<button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

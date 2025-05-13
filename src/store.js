@@ -14,7 +14,8 @@ export const initialStore = () => {
       }
     ],
     characters: [],
-    favorites:  []
+    favorites:  [],
+    contacts: []
   }
 }
 // 1. Definición y exportación de la función reducer llamada 'storeReducer'.
@@ -87,9 +88,35 @@ export default function storeReducer(store, action = {}) {
           }
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+case "LOAD_CONTACTS": {
 
-
+      return {
+        ...store,
+        contacts: action.payload,
+      };
+    }
+    case "DELETE_CONTACT": {
+      return {
+        ...store,
+        contacts: store.contacts.filter((contact) => contact.id !== action.payload),
+      };
+    }
+    case "ADD_CONTACT": {
+      return {
+        ...store,
+        contacts: [...store.contacts, action.payload], 
+      };
+    }
+    case "UPDATE_CONTACT": {
+      return {
+        ...store,
+        contacts: store.contacts.map((contact) =>
+          contact.id === action.payload.id ? action.payload : contact
+        ),
+      };
+    }
 
 
     // 16. 'default' case: Se ejecuta si el tipo de la acción no coincide con ningún 'case' anterior.

@@ -10,6 +10,8 @@ import { Home } from "./pages/Home";
 import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
 import Description from "./pages/description.jsx";
+import ContactList from "./pages/ContactList";
+
 export const router = createBrowserRouter(
     createRoutesFromElements(
     // CreateRoutesFromElements function allows you to build route elements declaratively.
@@ -26,6 +28,7 @@ export const router = createBrowserRouter(
         <Route path="/description/:uid" element={<Description/>} />
         <Route path="/single/:theId" element={ <Single />} />  {/* Dynamic route for single items */}
         <Route path="/demo" element={<Demo />} />
+        <Route path="/contact" element={<ContactList />} />
       </Route>
     )
 );
